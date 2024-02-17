@@ -1,6 +1,6 @@
 {
-    "name": "Luxfiro-launcher",
-    "preductname": "Luxfiro Launcher",
+    "name": "luxfiro-client",
+    "preductname": "Luxfiro Client",
     "version": "1.1.0",
     "description": "Cliente Litium Comunidad | configurado por SoyMango |",
     "main": "src/app.js",

@@ -22,7 +22,7 @@ function destroyWindow() {
 function createWindow() {
     destroyWindow();
     updateWindow = new electron.BrowserWindow({
-        title: "Mise à jour",
+        title: "Luxfiro Client",
         width: 400,
         height: 500,
         resizable: false,
