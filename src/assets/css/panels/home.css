@@ -81,17 +81,24 @@
 }
 
 .play-btn {
-    top: 10px;
-    width: 160px;
-    height: 37px;
-    border-radius: 20px;
-    border: none;
-    background: rgb(105, 152, 255);
-    background: radial-gradient(circle, rgb(105, 152, 255) 0%, rgba(105, 152, 255) 100%);
-    font: normal normal bold 20px/25px Poppins;
-    color: #000000;
-    margin: 15px 0;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: rgba(0, 89, 255, 0);
+    color: #F1F1F1;
+    font: normal normal bold 19px/29px Poppins;
+    cursor: pointer;
+    display: block;
+    border-radius: 15px;
+    width: auto;
+    margin: auto;
+    margin-top: 2%;
+    padding-top: 0;
     transition: 0.2s ease-out;
+    height: 45px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 20px;
+    padding: 0px;
+    width: 200px;
     cursor: pointer;
     
 }
