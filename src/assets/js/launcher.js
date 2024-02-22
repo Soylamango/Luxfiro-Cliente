@@ -19,7 +19,7 @@ async function setActivity() {
         details: `Servidor Minecraft`,
         state: `Iniciando Luxfiro Launcher!`,
         startTimestamp: Date.now(),
-        largeImageKey: 'https://media.discordapp.net/attachments/1201597666379964579/1202481017689210940/Screenshot_20240129_030525_KineMaster.jpg?ex=65e011b7&is=65cd9cb7&hm=341e8d5e533abef67124d074956aef5508bc3e480064d5101b2fe3bd93569104&=&format=webp&width=570&height=473',
+        largeImageKey: 'https://cdn.discordapp.com/icons/1199216382538170398/a5d2f7090c456a6857bc4b93a88251b8.png?size=2048',
         largeImageText: `Luxfiro Client`,
         instance: false,
         buttons: [
