@@ -13,7 +13,7 @@ const clientId = '1207516304857235546';
 const DiscordRPC = require('discord-rpc');
 const RPC = new DiscordRPC.Client({ transport: 'ipc'});
 
-DiscordRPC.register(clientId);
+DiscordRPC.register(1207516304857235546);
 
 async function setActivity() {
    if (!RPC) return;
