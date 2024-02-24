@@ -9,39 +9,6 @@
 const fs = require('fs');
 const { Microsoft, Mojang } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
-const clientId = '1207516304857235546';
-const DiscordRPC = require('1207516304857235546');
-const RPC = new DiscordRPC.Client({ transport: 'ipc'});
-
-DiscordRPC.register(1207516304857235546);
-
-async function setActivity() {
-   if (!RPC) return;
-   RPC.setActivity({
-       details: `Luxfiro Client`,
-       state: ``,
-       startTimestamp: Date.now(),
-       largeImageKey: 'https://i.pinimg.com/236x/19/09/67/190967de265ea709ab46020f6128a83d.jpg',
-       largeImageText: `Minecraft Launcher`,
-       instance: false,
-       buttons: [
-           {
-               label: `Discord`,
-               url: `https://discord.gg/udUkgYvmWB `,
-           }
-       ]
-   });
-};
-
-RPC.on('ready', async () => {
-   setActivity();
-
-   setInterval(() => {
-       setActivity();
-   }, 86400 * 1000);
-});
-
-RPC.login({ clientId }).catch(err => console.error(err));
 
 import { config, logger, changePanel, database, addAccount, accountSelect } from './utils.js';
 import Login from './panels/login.js';

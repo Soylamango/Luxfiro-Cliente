@@ -7,39 +7,6 @@
 const { ipcRenderer } = require('electron');
 import { config } from './utils.js';
 const { ipcMain, BrowserWindow } = require('electron');
-const clientId = '1207516304857235546';
-const DiscordRPC = require('1207516304857235546');
-const RPC = new DiscordRPC.Client({ transport: 'ipc'});
-
-DiscordRPC.register(1207516304857235546);
-
-async function setActivity() {
-   if (!RPC) return;
-   RPC.setActivity({
-       details: `Luxfiro Client`,
-       state: ``,
-       startTimestamp: Date.now(),
-       largeImageKey: 'https://i.pinimg.com/236x/19/09/67/190967de265ea709ab46020f6128a83d.jpg',
-       largeImageText: `Minecraft Launcher`,
-       instance: false,
-       buttons: [
-           {
-               label: `Discord`,
-               url: `https://discord.gg/udUkgYvmWB `,
-           }
-       ]
-   });
-};
-
-RPC.on('ready', async () => {
-   setActivity();
-
-   setInterval(() => {
-       setActivity();
-   }, 86400 * 1000);
-});
-
-RPC.login({ clientId }).catch(err => console.error(err));
 
 let dev = process.env.NODE_ENV === 'dev';
 
@@ -56,13 +23,13 @@ class Splash {
 
     async startAnimation() {
         let splashes = [
-            { "message": "", "author": "Luxfiro Client" },
-            { "message": "", "author": "Luxfiro Client" },
-            { "message": "", "author": "Luxfiro Client" }
+            { "message": "Cargando SG Launcher", "author": "SoyRayku x SG" },
+            { "message": "El Launcher esta cargando...", "author": "SoyRayku x SG" },
+            { "message": "Starting Server...", "author": "SoyRayku x SG" }
         ]
         let splash = splashes[Math.floor(Math.random() * splashes.length)];
         this.splashMessage.textContent = splash.message;
-        this.splashAuthor.children[0].textContent = "" + splash.author;
+        this.splashAuthor.children[0].textContent = "@" + splash.author;
         await sleep(100);
         document.querySelector("#splash").style.display = "block";
         await sleep(500);
