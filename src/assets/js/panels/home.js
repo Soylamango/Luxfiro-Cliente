@@ -11,6 +11,39 @@ const { Launch, Status } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
 const launch = new Launch();
 const pkg = require('../package.json');
+const clientId = '1207516304857235546';
+const DiscordRPC = require('discord-rpc');
+const RPC = new DiscordRPC.Client({ transport: 'ipc'});
+
+DiscordRPC.register(clientId);
+
+async function setActivity() {
+   if (!RPC) return;
+   RPC.setActivity({
+       details: `Luxfiro Client`,
+       state: `Esta en la pantalla de inicio de luxfiro client`,
+       startTimestamp: Date.now(),
+       largeImageKey: 'https://i.pinimg.com/236x/19/09/67/190967de265ea709ab46020f6128a83d.jpg',
+       largeImageText: `Minecraft Launcher`,
+       instance: false,
+       buttons: [
+           {
+               label: `Discord`,
+               url: `https://discord.gg/udUkgYvmWB `,
+           }
+       ]
+   });
+};
+
+RPC.on('ready', async () => {
+   setActivity();
+
+   setInterval(() => {
+       setActivity();
+   }, 86400 * 1000);
+});
+
+RPC.login({ clientId }).catch(err => console.error(err));
 
 const dataDirectory = process.env.APPDATA || (process.platform == 'darwin' ? `${process.env.HOME}/Library/Application Support` : process.env.HOME)
 
