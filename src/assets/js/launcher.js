@@ -19,7 +19,7 @@ async function setActivity() {
    if (!RPC) return;
    RPC.setActivity({
        details: `Luxfiro Client`,
-       state: `Launcher de Eventos Publicos`,
+       state: ``,
        startTimestamp: Date.now(),
        largeImageKey: 'https://i.pinimg.com/236x/19/09/67/190967de265ea709ab46020f6128a83d.jpg',
        largeImageText: `Minecraft Launcher`,
