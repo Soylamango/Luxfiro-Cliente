@@ -10,7 +10,7 @@ const dataDirectory = process.env.APPDATA || (process.platform == 'darwin' ? pro
 
 const os = require('os');
 const clientId = '1207516304857235546';
-const DiscordRPC = require('discord-rpc');
+const DiscordRPC = require('1207516304857235546');
 const RPC = new DiscordRPC.Client({ transport: 'ipc'});
 
 DiscordRPC.register(1207516304857235546);

@@ -10,7 +10,7 @@ const fs = require('fs');
 const { Microsoft, Mojang } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
 const clientId = '1207516304857235546';
-const DiscordRPC = require('discord-rpc');
+const DiscordRPC = require('1207516304857235546');
 const RPC = new DiscordRPC.Client({ transport: 'ipc'});
 
 DiscordRPC.register(1207516304857235546);
