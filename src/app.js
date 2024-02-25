@@ -33,21 +33,18 @@ const clientId = '1207516304857235546';
 
  async function setActivity() {
     if (!RPC) return;
+     const newLocal = `link xd`;
     RPC.setActivity({
-        details: `Servidor Minecraft Rol`,
-        state: `Iniciando una Aventura!`,
+        details: `Luxfiro Cliente`,
+        state: `Luxfiro Estadia`,
         startTimestamp: Date.now(),
-        largeImageKey: 'logo',
+        largeImageKey: 'https://i.pinimg.com/564x/ef/32/45/ef3245310227ffbb71f72e3aff623324.jpg',
         largeImageText: `Minecraft Launcher`,
         instance: false,
         buttons: [
             {
                 label: `Discord`,
-                url: `link xd`,
-            },
-            {
-                label: `Youtube`,
-                url: `link xd`,
+                url: `https://discord.gg/udUkgYvmWB`,
             }
         ]
     });
