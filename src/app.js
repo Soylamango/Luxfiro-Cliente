@@ -25,6 +25,43 @@ if (dev) {
 }
 
 const gotTheLock = app.requestSingleInstanceLock();
+const clientId = '1207516304857235546';
+ const DiscordRPC = require('discord-rpc');
+ const RPC = new DiscordRPC.Client({ transport: 'ipc'});
+ 
+ DiscordRPC.register(clientId);
+
+ async function setActivity() {
+    if (!RPC) return;
+    RPC.setActivity({
+        details: `Servidor Minecraft Rol`,
+        state: `Iniciando una Aventura!`,
+        startTimestamp: Date.now(),
+        largeImageKey: 'logo',
+        largeImageText: `Minecraft Launcher`,
+        instance: false,
+        buttons: [
+            {
+                label: `Discord`,
+                url: `link xd`,
+            },
+            {
+                label: `Youtube`,
+                url: `link xd`,
+            }
+        ]
+    });
+ };
+
+RPC.on('ready', async () => {
+    setActivity();
+
+    setInterval(() => {
+        setActivity();
+    }, 86400 * 1000);
+});
+
+RPC.login({ clientId }).catch(err => console.error(err));
 
 if (!app.requestSingleInstanceLock()) app.quit();
 else app.whenReady().then(() => {
