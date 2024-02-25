@@ -35,11 +35,11 @@ const clientId = '1207516304857235546';
     if (!RPC) return;
      const newLocal = `link xd`;
     RPC.setActivity({
-        details: 'By: Luxfiro Client',
+        details: 'By: Luxfiro Studios',
         state: 'En el Menú principal',
         startTimestamp: Date.now(),
-        largeImageKey: 'https://i.pinimg.com/564x/ef/32/45/ef3245310227ffbb71f72e3aff623324.jpg',
-        largeImageText: ``,
+        largeImageKey: 'https://images-ext-2.discordapp.net/external/vVzU2ixTwc-pHkzqDn76mj68N7Xc0pNs-Lf0YASuS_Q/%3Fsize%3D2048/https/cdn.discordapp.com/icons/1199216382538170398/a5d2f7090c456a6857bc4b93a88251b8.png?format=webp&quality=lossless&width=473&height=473',
+        largeImageText: `Minecraft Launcher`,
         instance: false,
         buttons: [
             {
