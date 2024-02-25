@@ -35,11 +35,11 @@ const clientId = '1207516304857235546';
     if (!RPC) return;
      const newLocal = `link xd`;
     RPC.setActivity({
-        details: `Luxfiro Cliente`,
-        state: `Luxfiro Estadia`,
+        details: 'By: Luxfiro Client',
+        state: 'En el Menú principal',
         startTimestamp: Date.now(),
         largeImageKey: 'https://i.pinimg.com/564x/ef/32/45/ef3245310227ffbb71f72e3aff623324.jpg',
-        largeImageText: `Minecraft Launcher`,
+        largeImageText: ``,
         instance: false,
         buttons: [
             {

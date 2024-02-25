@@ -6,7 +6,7 @@ body {
     -webkit-app-region: drag;
     user-select: none;
     border: 3px solid rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.63);
+    background-color: rgba(0, 0, 0, 0.89);
 }
 
 img {
