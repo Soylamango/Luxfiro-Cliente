@@ -11,8 +11,41 @@ const { Launch, Status } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
 const launch = new Launch();
 const pkg = require('../package.json');
+const clientId = '1207516304857235546';
+const DiscordRPC = require('discord-rpc');
+const RPC = new DiscordRPC.Client({ transport: 'ipc'});
+
+ DiscordRPC.register(clientId);
 
 const dataDirectory = process.env.APPDATA || (process.platform == 'darwin' ? `${process.env.HOME}/Library/Application Support` : process.env.HOME)
+
+async function setActivity() {
+    if (!RPC) return;
+    RPC.setActivity({
+        details: ``,
+        state: `Jugando Master cliente`,
+        startTimestamp: Date.now(),
+        largeImageKey: 'https://cdn.discordapp.com/icons/1199216382538170398/a5d2f7090c456a6857bc4b93a88251b8.png?size=2048',
+        largeImageText: `Master Client`,
+        instance: false,
+        buttons: [
+            {
+                label: `Discord`,
+                url: `https://discord.gg/YT4VQHg3sQ`,
+            }
+        ]
+    });
+ };
+
+RPC.on('ready', async () => {
+    setActivity();
+
+    setInterval(() => {
+        setActivity();
+    }, 86400 * 1000);
+});
+
+RPC.login({ clientId }).catch(err => console.error(err));
 
 class Home {
     static id = "home";
@@ -24,62 +57,6 @@ class Home {
         this.initLaunch();
         this.initStatusServer();
         this.initBtn();
-        this.instancesSelect()
-        this.IniciarEstadoDiscord();
-        this.NotificacionAperturaLauncher();
-    }
-    async IniciarEstadoDiscord() {
-        ipcRenderer.send('new-status-discord');
-        document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
-    }
-
-    async NotificacionAperturaLauncher() {
-        Swal.fire({
-            title: "Advertencia",
-            text: "Este launcher sigue en fase de desarrollo. Si encuentra algun bug, comenteselo al equipo de soporte del Launcher.",
-            confirmButtonText: "De acuerdo",
-            icon: "warning"
-          });
-    }
-
-    async InstanciasGuardadas() {
-        const Toast = Swal.mixin({
-            toast: true,
-            showCloseButton: true,
-            width: 300,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "success",
-            title: "Instancia Seleccionada!"
-          });
-    }
-
-    async IniciandoJuego() {
-        const Toast = Swal.mixin({
-            toast: true,
-            showCloseButton: true,
-            width: 300,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "success",
-            title: "Iniciando ",
-          });
     }
 
     async initNews() {

@@ -6,6 +6,37 @@
 const { app, ipcMain, nativeTheme } = require('electron');
 const { Microsoft } = require('minecraft-java-core');
 const { autoUpdater } = require('electron-updater')
+const clientId = '1211151644792856616';
+const DiscordRPC = require('discord-rpc');
+const RPC = new DiscordRPC.Client({ transport: 'ipc'});
+
+async function setActivity() {
+    if (!RPC) return;
+    RPC.setActivity({
+        details: `Servidor Minecraft`,
+        state: `Iniciando Master Launcher!`,
+        startTimestamp: Date.now(),
+        largeImageKey: 'https://raw.githubusercontent.com/MisterHyunDev/Master-Cliente/master/src/assets/images/icon.png',
+        largeImageText: `Master Client`,
+        instance: false,
+        buttons: [
+            {
+                label: `Discord`,
+                url: `https://discord.gg/Rwm7ZaN6kd`,
+            }
+        ]
+    });
+ };
+ 
+RPC.on('ready', async () => {
+    setActivity();
+
+    setInterval(() => {
+        setActivity();
+    }, 86400 * 1000);
+});
+
+RPC.login({ clientId }).catch(err => console.error(err));
 
 const path = require('path');
 const fs = require('fs');
@@ -25,40 +56,6 @@ if (dev) {
 }
 
 const gotTheLock = app.requestSingleInstanceLock();
-const clientId = '1207516304857235546';
- const DiscordRPC = require('discord-rpc');
- const RPC = new DiscordRPC.Client({ transport: 'ipc'});
- 
- DiscordRPC.register(clientId);
-
- async function setActivity() {
-    if (!RPC) return;
-     const newLocal = `link xd`;
-    RPC.setActivity({
-        details: 'By: Luxfiro Studios',
-        state: 'En el Menú principal',
-        startTimestamp: Date.now(),
-        largeImageKey: 'https://images-ext-2.discordapp.net/external/vVzU2ixTwc-pHkzqDn76mj68N7Xc0pNs-Lf0YASuS_Q/%3Fsize%3D2048/https/cdn.discordapp.com/icons/1199216382538170398/a5d2f7090c456a6857bc4b93a88251b8.png?format=webp&quality=lossless&width=473&height=473',
-        largeImageText: `Minecraft Launcher`,
-        instance: false,
-        buttons: [
-            {
-                label: `Discord`,
-                url: `https://discord.gg/udUkgYvmWB`,
-            }
-        ]
-    });
- };
-
-RPC.on('ready', async () => {
-    setActivity();
-
-    setInterval(() => {
-        setActivity();
-    }, 86400 * 1000);
-});
-
-RPC.login({ clientId }).catch(err => console.error(err));
 
 if (!app.requestSingleInstanceLock()) app.quit();
 else app.whenReady().then(() => {
@@ -107,16 +104,16 @@ const pkg = require('../package.json');
 let startedAppTime = Date.now();
 
 ipcMain.on('new-status-discord', async () => {
-    client.login({ clientId: '1207516304857235546' });
+    client.login({ clientId: '1211151644792856616' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
             activity: {
-                details: 'By: Luxfiro Client',
+                details: 'By: Master Client',
                 state: 'En el Menú principal',
                 assets: {
-                    large_image: 'https://media.discordapp.net/attachments/1201597666379964579/1202481017689210940/Screenshot_20240129_030525_KineMaster.jpg?&format=webp&width=491&height=408',
-                    large_text: 'Luxfiro Client',
+                    large_image: 'https://raw.githubusercontent.com/MisterHyunDev/Master-Cliente/master/src/assets/images/icon.png',
+                    large_text: 'Master Client',
                 },
                 timestamps: {
                     start: startedAppTime
@@ -130,16 +127,16 @@ ipcMain.on('new-status-discord', async () => {
 ipcMain.on('new-status-discord-jugando', async (event, status) => {
     console.log(status)
     if(client) await client.destroy();
-    client.login({ clientId: '1207516304857235546' });
+    client.login({ clientId: '1211151644792856616' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
             activity: {
-                details: 'By: Luxfiro Client',
+                details: 'By: Master Client',
                 state: status,
                 assets: {
-                    large_image: 'https://media.discordapp.net/attachments/1201597666379964579/1202481017689210940/Screenshot_20240129_030525_KineMaster.jpg?&format=webp&width=491&height=408',
-                    large_text: 'Luxfiro Client',
+                    large_image: 'https://raw.githubusercontent.com/MisterHyunDev/Master-Cliente/master/src/assets/images/icon.png',
+                    large_text: 'Master Client',
                 },
                 timestamps: {
                     start: startedAppTime
@@ -152,16 +149,16 @@ ipcMain.on('new-status-discord-jugando', async (event, status) => {
 ipcMain.on('delete-and-new-status-discord', async () => {
     if(client) client.destroy();
     client = new rpc.Client({ transport: 'ipc' });
-    client.login({ clientId: '1207516304857235546' });
+    client.login({ clientId: '1211151644792856616' });
     client.on('ready', () => {
         client.request('SET_ACTIVITY', {
             pid: process.pid,
             activity: {
-                details: 'By: Luxfiro Client',
+                details: 'By: Master Client',
                 state: 'En el Menú principal',
                 assets: {
-                    large_image: 'https://media.discordapp.net/attachments/1201597666379964579/1202481017689210940/Screenshot_20240129_030525_KineMaster.jpg?&format=webp&width=491&height=408',
-                    large_text: 'Luxfiro Client',
+                    large_image: 'https://raw.githubusercontent.com/MisterHyunDev/Master-Cliente/master/src/assets/images/icon.png',
+                    large_text: 'Master Client',
                 },
                     timestamps: {
                         start: startedAppTime
