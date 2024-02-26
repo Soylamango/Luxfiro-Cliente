@@ -13,8 +13,8 @@ const RPC = new DiscordRPC.Client({ transport: 'ipc'});
 async function setActivity() {
     if (!RPC) return;
     RPC.setActivity({
-        details: `Servidor Minecraft`,
-        state: `Iniciando Master Launcher!`,
+        details: `¡Nuevo Evento!`,
+        state: `Ingresando al servidor`,
         startTimestamp: Date.now(),
         largeImageKey: 'https://raw.githubusercontent.com/MisterHyunDev/Master-Cliente/master/src/assets/images/icon.png',
         largeImageText: `Master Client`,
@@ -23,6 +23,10 @@ async function setActivity() {
             {
                 label: `Discord`,
                 url: `https://discord.gg/Rwm7ZaN6kd`,
+            },
+            {
+                label: `Twitch`,
+                url: `https://www.twitch.tv/master62_`,
             }
         ]
     });

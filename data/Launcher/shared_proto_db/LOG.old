@@ -1,2 +1,3 @@
-2024/02/25-22:58:03.369 1f18 Creating DB C:/Users/devhy/OneDrive/Documents/Launchers/Master-Cliente/data/Launcher\shared_proto_db since it was missing.
-2024/02/25-22:58:03.378 1f18 Reusing MANIFEST C:/Users/devhy/OneDrive/Documents/Launchers/Master-Cliente/data/Launcher\shared_proto_db/MANIFEST-000001
+2024/02/26-12:19:40.781 186c Reusing MANIFEST C:/Users/devhy/OneDrive/Documents/Launchers/Master-Cliente/data/Launcher\shared_proto_db/MANIFEST-000001
+2024/02/26-12:19:40.791 186c Recovering log #3
+2024/02/26-12:19:40.792 186c Reusing old log C:/Users/devhy/OneDrive/Documents/Launchers/Master-Cliente/data/Launcher\shared_proto_db/000003.log 

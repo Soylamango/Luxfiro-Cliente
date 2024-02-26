@@ -9,15 +9,15 @@ import { database, changePanel, accountSelect, Slider } from '../utils.js';
 const dataDirectory = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
 
 const os = require('os');
-const clientId = '1207516304857235546';
+const clientId = '1211151644792856616';
 const DiscordRPC = require('discord-rpc');
 const RPC = new DiscordRPC.Client({ transport: 'ipc'});
 
 async function setActivity() {
     if (!RPC) return;
     RPC.setActivity({
-        details: `Servidor Minecraft`,
-        state: `Iniciando Master Launcher!`,
+        details: `¡Nuevo Evento!`,
+        state: `Ingresando al servidor`,
         startTimestamp: Date.now(),
         largeImageKey: 'https://cdn.discordapp.com/icons/1199216382538170398/a5d2f7090c456a6857bc4b93a88251b8.png?size=2048',
         largeImageText: `Master Client`,
@@ -25,7 +25,11 @@ async function setActivity() {
         buttons: [
             {
                 label: `Discord`,
-                url: `https://discord.gg/ThxjVsdBzp`,
+                url: `https://discord.gg/Rwm7ZaN6kd`,
+            },
+            {
+                label: `Twitch`,
+                url: `https://www.twitch.tv/master62_`,
             }
         ]
     });

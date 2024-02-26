@@ -1,11 +1,11 @@
 {
     "name": "master-client",
     "preductname": "Master Client",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "description": "Cliente para participar en los eventos de Master62_ | Creado por MrHyun",
     "main": "src/app.js",
     "author": "MrHyun x master62_",
-    "url": "https://master62eventos.000webhostapp.com/datos/",
+    "url": "https://devhyun.000webhostapp.com/datos/",
     "engines": {
         "node": "^18.x.x"
     },

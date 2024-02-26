@@ -75,19 +75,19 @@
     left: 50%;
     transform: translate(-50%);
     height: 100%;
-    color: #F1F1F1;
-    font: normal normal bold 19px/29px Poppins;
+    color: #38ff63;
+    font: normal normal bold 18px/20px Poppins;
     text-align: center;
 }
 
 .play-btn {
-    border: 3px solid rgb(255, 255, 255);
-    background-color: rgba(0, 89, 255, 0);
+    border: 2px solid #38ff6367;
+    background-color: #1a91508c;
     color: #F1F1F1;
-    font: normal normal bold 19px/29px Poppins;
+    font: normal normal bold 18px/20px Poppins;
     cursor: pointer;
     display: block;
-    border-radius: 15px;
+    border-radius: 10px;
     width: auto;
     margin: auto;
     margin-top: 2%;
@@ -131,7 +131,7 @@
 }
 
 .progress-bar::-webkit-progress-bar {
-    background-color: #797979;
+    background-color: #0a94387e;
     border-radius: 10px;
 }
 
@@ -160,16 +160,16 @@
 .news-block {
     margin-bottom: 1rem;
     border-radius: 10px 10px 10px 10px;
-    background-color: #29292985;
+    background-color: #1a1f193d;
     transition: ease-in-out 0.2s;
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(20px);
     margin: auto;
     max-width: 1500px;
     margin-bottom: 10px;
 }
 
 .news-block:hover {
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(20px);
     background-color: #292929b7;
 }
 
@@ -182,9 +182,9 @@
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 87px;
+    height: 90px;
 
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 20px 20px 0px 0px;
 
 }
 
@@ -273,10 +273,10 @@
     width: 70%;
     height: 75px;
     background-color: #29292985;
-    border-radius: 47px;
+    border-radius: 20px;
     transition: ease-in-out 0.2s;
-    backdrop-filter: blur(30px);
-    min-width: 350px;
+    backdrop-filter: blur(10px);
+    min-width: 300px;
     left: 200px;
 }
 
@@ -314,11 +314,11 @@
 }
 
 .green {
-    color: #38ff73;
+    color: #5bff8c;
 }
 
 .red {
-    color: #FF0409;
+    color: #ff5a5d;
 }
 
 .etat-text {
@@ -352,11 +352,11 @@
     border-radius: 10px;
     border: 2px solid #1A1A1A;
     transition: all .2s;
-    background-color: #38ff73;
+    background-color: #5bff8c;
 }
 
 .online.off {
-    background-color: #FF0409;
+    background-color: #ff5a5d;
 }
 
 .avenir {

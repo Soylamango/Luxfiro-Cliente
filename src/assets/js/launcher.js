@@ -9,23 +9,27 @@
 const fs = require('fs');
 const { Microsoft, Mojang } = require('minecraft-java-core');
 const { ipcRenderer } = require('electron');
-const clientId = '1207516304857235546';
+const clientId = '1211151644792856616';
 const DiscordRPC = require('discord-rpc');
 const RPC = new DiscordRPC.Client({ transport: 'ipc'});
 
 async function setActivity() {
     if (!RPC) return;
     RPC.setActivity({
-        details: `Servidor Minecraft`,
-        state: `Iniciando Master Launcher!`,
+        details: `¡Nuevo Evento!`,
+        state: `Ingresando al servidor`,
         startTimestamp: Date.now(),
-        largeImageKey: 'https://cdn.discordapp.com/icons/1199216382538170398/a5d2f7090c456a6857bc4b93a88251b8.png?size=2048',
+        largeImageKey: 'https://media.discordapp.net/attachments/1152506206485745745/1211157355031433267/discord.png?ex=65ed2d2f&is=65dab82f&hm=c31a22ebfb128def70e092251764aca4a56b9e8989198b53700638d84ec2d938&=&format=webp&quality=lossless&width=350&height=350',
         largeImageText: `Master Client`,
         instance: false,
         buttons: [
             {
                 label: `Discord`,
-                url: `https://discord.gg/ThxjVsdBzp`,
+                url: `https://discord.gg/Rwm7ZaN6kd`,
+            },
+            {
+                label: `Twitch`,
+                url: `https://www.twitch.tv/master62_`,
             }
         ]
     });
