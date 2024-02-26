@@ -26,7 +26,7 @@
         "minecraft-java-core": "^3.6.2",
         "node-bdd": "^2.0.3",
         "node-fetch": "^2.6.12",
-        "sweetalert2": "^11.10.4",
+        "sweetalert2": "^11.6.13",
         "xml-js": "^1.6.11"
     },
     "devDependencies": {

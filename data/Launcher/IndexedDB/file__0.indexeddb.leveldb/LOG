@@ -1,3 +1,2 @@
-2024/02/25-13:32:09.616 4318 Reusing MANIFEST C:/Users/Usuario/Documents/GitHub/Luxfiro-Cliente/data/Launcher\IndexedDB\file__0.indexeddb.leveldb/MANIFEST-000001
-2024/02/25-13:32:09.616 4318 Recovering log #3
-2024/02/25-13:32:09.618 4318 Reusing old log C:/Users/Usuario/Documents/GitHub/Luxfiro-Cliente/data/Launcher\IndexedDB\file__0.indexeddb.leveldb/000003.log 
+2024/02/25-22:57:59.272 35e8 Creating DB C:/Users/devhy/OneDrive/Documents/Launchers/Master-Cliente/data/Launcher\IndexedDB\file__0.indexeddb.leveldb since it was missing.
+2024/02/25-22:57:59.285 35e8 Reusing MANIFEST C:/Users/devhy/OneDrive/Documents/Launchers/Master-Cliente/data/Launcher\IndexedDB\file__0.indexeddb.leveldb/MANIFEST-000001

@@ -1,3 +1,2 @@
-2024/02/25-13:36:38.424 48c0 Reusing MANIFEST C:/Users/Usuario/Documents/GitHub/Luxfiro-Cliente/data/Launcher\Local Storage\leveldb/MANIFEST-000001
-2024/02/25-13:36:38.425 48c0 Recovering log #3
-2024/02/25-13:36:38.425 48c0 Reusing old log C:/Users/Usuario/Documents/GitHub/Luxfiro-Cliente/data/Launcher\Local Storage\leveldb/000003.log 
+2024/02/25-22:57:58.011 1f18 Creating DB C:/Users/devhy/OneDrive/Documents/Launchers/Master-Cliente/data/Launcher\Local Storage\leveldb since it was missing.
+2024/02/25-22:57:58.048 1f18 Reusing MANIFEST C:/Users/devhy/OneDrive/Documents/Launchers/Master-Cliente/data/Launcher\Local Storage\leveldb/MANIFEST-000001

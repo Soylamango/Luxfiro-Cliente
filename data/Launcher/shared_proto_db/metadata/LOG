@@ -1,3 +1,2 @@
-2024/02/25-13:32:51.909 2aa8 Reusing MANIFEST C:/Users/Usuario/Documents/GitHub/Luxfiro-Cliente/data/Launcher\shared_proto_db\metadata/MANIFEST-000001
-2024/02/25-13:32:51.911 2aa8 Recovering log #3
-2024/02/25-13:32:51.913 2aa8 Reusing old log C:/Users/Usuario/Documents/GitHub/Luxfiro-Cliente/data/Launcher\shared_proto_db\metadata/000003.log 
+2024/02/25-22:58:03.350 1f18 Creating DB C:/Users/devhy/OneDrive/Documents/Launchers/Master-Cliente/data/Launcher\shared_proto_db\metadata since it was missing.
+2024/02/25-22:58:03.363 1f18 Reusing MANIFEST C:/Users/devhy/OneDrive/Documents/Launchers/Master-Cliente/data/Launcher\shared_proto_db\metadata/MANIFEST-000001
