@@ -1,7 +1,7 @@
 {
     "name": "master-client",
     "preductname": "Master Client",
-    "version": "1.0.3",
+    "version": "1.0.1",
     "description": "Cliente para participar en los eventos de Master62_ | Creado por MrHyun",
     "main": "src/app.js",
     "author": "MrHyun x master62_",
