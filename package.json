@@ -2,9 +2,9 @@
     "name": "Luxfiro-client",
     "preductname": "Luxfiro Client",
     "version": "1.0.1",
-    "description": "Cliente para participar en los eventos de Master62_ | Creado por MrHyun",
+    "description": "Cliente para participar en eventos de Luxfiro Studios | Creado por MenakiVT",
     "main": "src/app.js",
-    "author": "MrHyun x master62_",
+    "author": "MenakiVT x mango3872 ",
     "url": "https://patoaas.000webhostapp.com/datos/",
     "engines": {
         "node": "^18.x.x"
