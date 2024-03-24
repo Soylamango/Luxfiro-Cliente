@@ -97,7 +97,7 @@ progress {
     opacity: 0;
 }
 
-progress.show {
+.progress.show {
     opacity: 1;
 }
 

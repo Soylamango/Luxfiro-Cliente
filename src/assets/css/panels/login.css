@@ -1,16 +1,17 @@
 .login-card {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 35%;
-    background: rgba(18, 18, 18, 0.5);
-    padding: 20px;
-    font: normal normal bold 19px/29px Poppins;
-    color: #E1E1E1;
-    border-radius: 15px;
-    text-align: center;
-    backdrop-filter: blur(30px);
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  background:transparent rgba(255, 255, 255, .5);
+  padding: 20px;
+  font: normal normal bold 19px/29px Poppins;
+  color: rgb(225, 225, 225);
+  border-radius: 15px;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  border: 3px solid rgb(255, 255, 255);
 }
 
 .login-type {
@@ -41,19 +42,19 @@
 }
 
 .login-type-btn:hover {
-    box-shadow: 0 0 15px #8038a1;
+    box-shadow: 0 0 15px #ffffff;
     transform: scale(1.05);
 }
 
 .login-type-btn:disabled {
-    background-color: #7800bd;
-    box-shadow: 0 0 5px #7800bd;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px #ffffff;
     cursor: default;
 }
 
 .login-type-btn:disabled:hover {
-    background-color: #7800bd;
-    box-shadow: 0 0 5px #7800bd;
+    background-color: #ffffff;
+    box-shadow: 0 0 5px #ffffff;
 }
 
 .login-card-mojang {
@@ -126,21 +127,36 @@
 }
 
 .login-btn {
-    border-radius: 15px;
-    border: none;
-    margin: 2% 0;
-    height: 2em;
-    background: rgb(119, 0, 255);
-    background: radial-gradient(circle, rgba(119, 0, 255) 0%, rgba(119, 0, 255) 100%);
-    color: #121212;
-    font: normal normal bold 19px/29px Poppins;
-    cursor: pointer;
-    transition: 0.2s ease-out;
+
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: .375em;
+  box-shadow: none;
+  box-sizing: border-box;
+  color: #363636;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 1rem;
+  height: 2.5em;
+  justify-content: center;
+  line-height: 1.5;
+  padding: calc(.5em - 1px) 1em;
+  position: relative;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: top;
+  white-space: nowrap;
+  transition: all .3s;
 }
 
 .login-btn:hover {
-    box-shadow: 0 0 15px #7800bd;
-    transform: scale(1.05);
+  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+  animation-play-state: running
 }
 
 .cancel {
@@ -198,12 +214,40 @@
 
 .logo {
     position: absolute;
-    top: 15%;
+    top: 5%;
+    left: 35%;
     margin-top: 30px;
-    left: 50%;
     transform: translate(-50%, -50%);
     height: 20%; /* Adjust the height as needed */
     text-align: center;
+    animation: jelloAppear 1s ease forwards;
+
+}
+
+@keyframes jelloAppear {
+  0% {
+    transform: scale3d(1, 1, 1);
+    opacity: 0;
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
 }
 /*       Just setting CSS for the page   */
 

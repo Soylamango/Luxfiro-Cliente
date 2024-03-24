@@ -24,62 +24,6 @@ class Home {
         this.initLaunch();
         this.initStatusServer();
         this.initBtn();
-        this.instancesSelect()
-        this.IniciarEstadoDiscord();
-        this.NotificacionAperturaLauncher();
-    }
-    async IniciarEstadoDiscord() {
-        ipcRenderer.send('new-status-discord');
-        document.querySelector('.settings-btn').addEventListener('click', e => changePanel('settings'))
-    }
-
-    async NotificacionAperturaLauncher() {
-        Swal.fire({
-            title: "Advertencia",
-            text: "Este launcher sigue en fase de desarrollo. Si encuentra algun bug, comenteselo al equipo de soporte del Launcher.",
-            confirmButtonText: "De acuerdo",
-            icon: "warning"
-          });
-    }
-
-    async InstanciasGuardadas() {
-        const Toast = Swal.mixin({
-            toast: true,
-            showCloseButton: true,
-            width: 300,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "success",
-            title: "Instancia Seleccionada!"
-          });
-    }
-
-    async IniciandoJuego() {
-        const Toast = Swal.mixin({
-            toast: true,
-            showCloseButton: true,
-            width: 300,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-              toast.onmouseenter = Swal.stopTimer;
-              toast.onmouseleave = Swal.resumeTimer;
-            }
-          });
-          Toast.fire({
-            icon: "success",
-            title: "Iniciando ",
-          });
     }
 
     async initNews() {
@@ -91,12 +35,12 @@ class Home {
                 blockNews.innerHTML = `
                     <div class="news-header">
                         <div class="header-text">
-                            <div class="title">Actualmente no hay ninguna noticia subida.</div>
+                            <div class="title">Aucun news n'ai actuellement disponible.</div>
                         </div>
                     </div>
                     <div class="news-content">
                         <div class="bbWrapper">
-                            <p>Puedes seguir todas las novedades del Studio aqui.</p>
+                            <p>Vous pourrez suivre ici toutes les news relative au serveur.</p>
                         </div>
                     </div>`
                 news.appendChild(blockNews);
@@ -118,7 +62,7 @@ class Home {
                         <div class="news-content">
                             <div class="bbWrapper">
                                 <p>${News.content.replace(/\n/g, '</br>')}</p>
-                                <p class="news-author">Redactado por<span> ${News.author}</span></p>
+                                <p class="news-author">Auteur,<span> ${News.author}</span></p>
                             </div>
                         </div>`
                     news.appendChild(blockNews);
@@ -135,7 +79,7 @@ class Home {
                 </div>
                 <div class="news-content">
                     <div class="bbWrapper">
-                        <p>No se ha podido refrescar el panel.</br>Revise su conexion a internet o contacte con un Administrador.</p>
+                        <p>Impossible de contacter le serveur des news.</br>Merci de vérifier votre configuration.</p>
                     </div>
                 </div>`
             // news.appendChild(blockNews);
@@ -200,7 +144,7 @@ class Home {
 
             launch.on('progress', (progress, size) => {
                 progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Descargando Archivos...<img style="width:28px;float:right;vertical-align: middle;" src="assets/images/background/492329d446c422b0483677d0318ab4fa.gif"></div>${((progress / size) * 100).toFixed(0)}%`
+                document.querySelector(".text-download").innerHTML = `Téléchargement ${((progress / size) * 100).toFixed(0)}%`
                 ipcRenderer.send('main-window-progress', { progress, size })
                 progressBar.value = progress;
                 progressBar.max = size;
@@ -208,7 +152,7 @@ class Home {
 
             launch.on('check', (progress, size) => {
                 progressBar.style.display = "block"
-                document.querySelector(".text-download").innerHTML = `Verificando Archivos...<img style="width:28px;float:right;vertical-align: middle;" src="assets/images/background/492329d446c422b0483677d0318ab4fa.gif"></div>${((progress / size) * 100).toFixed(0)}%`
+                document.querySelector(".text-download").innerHTML = `Vérification ${((progress / size) * 100).toFixed(0)}%`
                 progressBar.value = progress;
                 progressBar.max = size;
             });
@@ -226,7 +170,7 @@ class Home {
 
             launch.on('patch', patch => {
                 console.log(patch);
-                info.innerHTML = `Parcheando archivos...<img style="width:28px;float:right;vertical-align: middle;" src="assets/images/background/492329d446c422b0483677d0318ab4fa.gif"></div>`
+                info.innerHTML = `Patch en cours...`
             });
 
             launch.on('data', (e) => {
@@ -234,7 +178,7 @@ class Home {
                 if (launcherSettings.launcher.close === 'close-launcher') ipcRenderer.send("main-window-hide");
                 ipcRenderer.send('main-window-progress-reset')
                 progressBar.style.display = "none"
-                info.innerHTML = `Iniciando...`
+                info.innerHTML = `Demarrage en cours...`
                 console.log(e);
             })
 
@@ -243,7 +187,7 @@ class Home {
                 progressBar.style.display = "none"
                 info.style.display = "none"
                 playBtn.style.display = "block"
-                info.innerHTML = `Verificando`
+                info.innerHTML = `Vérification`
                 new logger('Launcher', '#7289da');
                 console.log('Close');
             });
@@ -263,12 +207,12 @@ class Home {
 
         if (!serverPing.error) {
             nameServer.textContent = this.config.status.nameServer;
-            serverMs.innerHTML = `<span class="green">En linea</span> - ${serverPing.ms}ms`;
+            serverMs.innerHTML = `<span class="green">En ligne</span> - ${serverPing.ms}ms`;
             online.classList.toggle("off");
             playersConnected.textContent = serverPing.playersConnect;
         } else if (serverPing.error) {
-            nameServer.textContent = 'No se ha podido refrescar';
-            serverMs.innerHTML = `<span class="red">Desconectado</span>`;
+            nameServer.textContent = 'Serveur indisponible';
+            serverMs.innerHTML = `<span class="red">Hors ligne</span>`;
         }
     }
 
