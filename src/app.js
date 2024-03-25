@@ -25,6 +25,13 @@ if (dev) {
 }
 
 const gotTheLock = app.requestSingleInstanceLock();
+
+if (!app.requestSingleInstanceLock()) app.quit();
+else app.whenReady().then(() => {
+    if (dev) return MainWindow.createWindow()
+    UpdateWindow.createWindow()
+});
+
 const clientId = '1207516304857235546';
  const DiscordRPC = require('discord-rpc');
  const RPC = new DiscordRPC.Client({ transport: 'ipc'});
@@ -59,12 +66,6 @@ RPC.on('ready', async () => {
 });
 
 RPC.login({ clientId }).catch(err => console.error(err));
-
-if (!app.requestSingleInstanceLock()) app.quit();
-else app.whenReady().then(() => {
-    if (dev) return MainWindow.createWindow()
-    UpdateWindow.createWindow()
-});
 
 ipcMain.on('main-window-open', () => MainWindow.createWindow())
 ipcMain.on('main-window-dev-tools', () => MainWindow.getWindow().webContents.openDevTools({ mode: 'detach' }))
@@ -115,7 +116,7 @@ ipcMain.on('new-status-discord', async () => {
                 details: 'By: Luxfiro Client',
                 state: 'En el Menú principal',
                 assets: {
-                    large_image: 'https://media.discordapp.net/attachments/1201597666379964579/1202481017689210940/Screenshot_20240129_030525_KineMaster.jpg?&format=webp&width=491&height=408',
+                    large_image: 'https://images-ext-2.discordapp.net/external/vVzU2ixTwc-pHkzqDn76mj68N7Xc0pNs-Lf0YASuS_Q/%3Fsize%3D2048/https/cdn.discordapp.com/icons/1199216382538170398/a5d2f7090c456a6857bc4b93a88251b8.png?format=webp&quality=lossless&width=473&height=473',
                     large_text: 'Luxfiro Client',
                 },
                 timestamps: {
@@ -138,7 +139,7 @@ ipcMain.on('new-status-discord-jugando', async (event, status) => {
                 details: 'By: Luxfiro Client',
                 state: status,
                 assets: {
-                    large_image: 'https://media.discordapp.net/attachments/1201597666379964579/1202481017689210940/Screenshot_20240129_030525_KineMaster.jpg?&format=webp&width=491&height=408',
+                    large_image: 'https://images-ext-2.discordapp.net/external/vVzU2ixTwc-pHkzqDn76mj68N7Xc0pNs-Lf0YASuS_Q/%3Fsize%3D2048/https/cdn.discordapp.com/icons/1199216382538170398/a5d2f7090c456a6857bc4b93a88251b8.png?format=webp&quality=lossless&width=473&height=473',
                     large_text: 'Luxfiro Client',
                 },
                 timestamps: {
@@ -160,7 +161,7 @@ ipcMain.on('delete-and-new-status-discord', async () => {
                 details: 'By: Luxfiro Client',
                 state: 'En el Menú principal',
                 assets: {
-                    large_image: 'https://media.discordapp.net/attachments/1201597666379964579/1202481017689210940/Screenshot_20240129_030525_KineMaster.jpg?&format=webp&width=491&height=408',
+                    large_image: 'https://images-ext-2.discordapp.net/external/vVzU2ixTwc-pHkzqDn76mj68N7Xc0pNs-Lf0YASuS_Q/%3Fsize%3D2048/https/cdn.discordapp.com/icons/1199216382538170398/a5d2f7090c456a6857bc4b93a88251b8.png?format=webp&quality=lossless&width=473&height=473',
                     large_text: 'Luxfiro Client',
                 },
                     timestamps: {

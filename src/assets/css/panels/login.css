@@ -4,15 +4,37 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 35%;
-  background:transparent rgba(255, 255, 255, .5);
+  background:transparent rgba(255, 255, 255, 0.918);
   padding: 20px;
   font: normal normal bold 19px/29px Poppins;
-  color: rgb(225, 225, 225);
+  color: rgb(255, 255, 255);
   border-radius: 15px;
   text-align: center;
   backdrop-filter: blur(20px);
   border: 3px solid rgb(255, 255, 255);
+  height: 200px; /* Altura de ejemplo */
+  text-align: center; /* Para centrar verticalmente */
 }
+.text-pop-up-top {
+  animation: text-pop-up-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+.text-pop-up-top {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: pop-up-top 0.5s forwards;
+}
+
+@keyframes pop-up-top {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .login-type {
     display: grid;
@@ -21,8 +43,8 @@
 
 .login-type-btn {
     border: 3px solid rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0);
-    color: #F1F1F1;
+    background-color: rgb(255, 255, 255);
+    color: #006eff;
     font: normal normal bold 19px/29px Poppins;
     cursor: pointer;
     display: block;
@@ -118,7 +140,27 @@
 .loginDisclaimerText {
     text-align: center;
     font-size: 0.5em;
-}
+    height: 200px; /* Altura de ejemplo */
+    text-align: center; /* Para centrar verticalmente */
+  }
+  
+  .loginDisclaimerText {
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: pop-up-top 0.5s forwards;
+  }
+  
+  @keyframes pop-up-top {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 
 .btn-option-login {
     width: 100%;
@@ -127,36 +169,77 @@
 }
 
 .login-btn {
-
-  align-items: center;
-  appearance: none;
-  background-color: #fff;
-  border: 1px solid #dbdbdb;
-  border-radius: .375em;
-  box-shadow: none;
-  box-sizing: border-box;
-  color: #363636;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 1rem;
-  height: 2.5em;
-  justify-content: center;
-  line-height: 1.5;
-  padding: calc(.5em - 1px) 1em;
   position: relative;
-  text-align: center;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: top;
-  white-space: nowrap;
-  transition: all .3s;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 45px;
+  width: 130px;
+  opacity: 1;
+  background-color: #000000;
+  border: 1px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 30px #fff;
+  box-shadow: 0 0 20px rgb(255, 255, 255);
+  margin: 0 auto;
+}
+
+.login-btn .login-btn4span {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
 }
 
 .login-btn:hover {
-  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
-  animation-play-state: running
+  animation: login-btnrotate 0.7s ease-in-out both;
+}
+
+.login-btn:hover .login-btnspan {
+  animation: login-btnstorm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+@keyframes login-btnrotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bn54storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
 }
 
 .cancel {
@@ -212,13 +295,13 @@
     cursor: default;
 }
 
-.logo {
+.logo2 {
     position: absolute;
     top: 5%;
     left: 35%;
     margin-top: 30px;
     transform: translate(-50%, -50%);
-    height: 20%; /* Adjust the height as needed */
+    height: 19%;
     text-align: center;
     animation: jelloAppear 1s ease forwards;
 
@@ -269,15 +352,15 @@
     margin-top: 15%;
   }
   
-  #workarea {
+  .workarea {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #1e1a3e;
+    background-color: #ffffff;
     font-family: Raleway;
   }
   
-  #personal {
+  .personal {
     color:white;
     text-decoration:none;
     position:absolute;
@@ -323,7 +406,7 @@
     under the words. Here's also where the transition speed is set.
   */
   
-  #shape {
+  .shape {
     stroke-width: 6px;
     fill: transparent;
     stroke: #009FFD;
@@ -336,12 +419,12 @@
       text would be below the div's.
   */
   
-  #text {
+  .text {
     margin-top: -35px;
     text-align: center;
   }
   
-  #text a {
+  .text a {
     color: white;
     text-decoration: none;
     font-weight: 100;

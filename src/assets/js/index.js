@@ -6,7 +6,6 @@
 'use strict';
 const { ipcRenderer } = require('electron');
 import { config } from './utils.js';
-const { ipcMain, BrowserWindow } = require('electron');
 
 let dev = process.env.NODE_ENV === 'dev';
 
@@ -50,12 +49,12 @@ class Splash {
         ipcRenderer.invoke('update-app').then(err => {
             if (err.error) {
                 let error = err.message;
-                this.shutdown(`Error al buscar actualizaciones:<br>${error}`);
+                this.shutdown(`Error al buscar actualizaciones :<br>${error}`);
             }
         })
 
         ipcRenderer.on('updateAvailable', () => {
-            this.setStatus(`Actualizacion disponible !`);
+            this.setStatus(`¡Actualización disponible!`);
             this.toggleProgress();
             ipcRenderer.send('start-update');
         })
