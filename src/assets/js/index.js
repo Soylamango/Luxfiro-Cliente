@@ -54,7 +54,7 @@ class Splash {
         })
 
         ipcRenderer.on('updateAvailable', () => {
-            this.setStatus(`¡Actualización disponible!`);
+            this.setStatus(`Mise à jour disponible !`);
             this.toggleProgress();
             ipcRenderer.send('start-update');
         })

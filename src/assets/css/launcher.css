@@ -7,16 +7,18 @@
     outline: none;
 }
 
-body {
+.body {
     margin: 0;
     padding: 0;
     user-select: none;
     background: linear-gradient(#000000, #000000), url("../images/background/background.jpg") black no-repeat center center scroll;
     resize: none;
     background-size:cover;
+    overflow: hidden; 
+    user-select: none;
 }
 
-img {
+.img {
     -webkit-user-drag: none;
     user-select: none;
 }
